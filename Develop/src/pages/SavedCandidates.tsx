@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 const SavedCandidates = () => {
   const [result, setResult] = useState<Candidate[]>([]);
+
   useEffect(() => {
     let parsedUsersToCandidate: Candidate[] = [];
     const storedUsersToCandidate = localStorage.getItem('CandidatesList');
@@ -12,6 +13,7 @@ const SavedCandidates = () => {
     parsedUsersToCandidate = parsedUsersToCandidate.filter(
       (user: Candidate) => user.login !== null && user.login !== undefined
     );
+    
     localStorage.setItem('CandidatesList', JSON.stringify(parsedUsersToCandidate));
     setResult(parsedUsersToCandidate);
     

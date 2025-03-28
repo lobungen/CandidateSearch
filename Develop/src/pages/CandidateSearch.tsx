@@ -64,8 +64,9 @@ const CandidateSearch = () => {
 
         <div className='resultsContainer'>
             <UserCard
+              key={currentUser.id}
               currentUser={currentUser}
-              
+
               addToCandidateList={addToCandidateList}
             />
         </div>
